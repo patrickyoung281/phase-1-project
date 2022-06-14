@@ -5,7 +5,50 @@
       <title>My Phase 1 Project</title>
   </head>
   <body>
-      <h1>Guten Tag!</h1>
+        <div class = "header">
+            <h1>Herzlich Wilkommen! </h1>
+            <p>Welcome to Herr Young's German Course!</p>
+        </div>
+
+        <div id = "intro-text">
+            <h2>In this module, you will be creating flashcards to help you learn modal verb constructions, as well as some new vocabulary.</h2>
+        </div>
+
+        <div class = "container">
+            <form class = "add-card-form">
+                <h3>Create a new flashcard!</h3>
+
+                <input
+                    type = "text" 
+                    name = "name" 
+                    value = ""
+                    placeholder="Enter a main verb in the infinitive" 
+                    class = "input-text"
+                />
+                <br />
+
+                <input
+                    type = "text" 
+                    name = "image" 
+                    value = ""
+                    placeholder="Enter an image that matches the modal verb you chose"
+                    class = "input-text" 
+                />
+
+                <br />
+
+                <input 
+                    type="submit" 
+                    name = "submit"
+                    value = "Create Flashcard" 
+                    class = "submit"
+                />
+
+            </form>
+
+        </div>
+
+
       <script src="script.js"></script>
   </body>
 </html>
