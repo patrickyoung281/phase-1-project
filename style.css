@@ -7,3 +7,15 @@
     color: white; 
     font-size: 30px; 
 }
+
+.flashCardFormat {
+    text-align: center;
+    border: green;
+    padding: 5rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    border: 10px;
+    border: 5px solid blue;
+}
