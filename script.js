@@ -1,8 +1,3 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
-
-document.querySelector("body").appendChild(h2);
-
 fetch("https://picsum.photos/v2/list")
     .then((resp) => resp.json())
     //.then((json) => console.log(json))
@@ -10,24 +5,13 @@ fetch("https://picsum.photos/v2/list")
         addFirstFlashCard(data)
     });
 
-/*
+
 function addFirstFlashCard(jsonList) {
-    const exampleCard = jsonList[3].download_url
-    const flashcards = document.getElementById("flashcards")
-    const newCard = document.createElement("img")
-    newCard.className = "flashCardFormat"
-    newCard.src = exampleCard
-    const newCardtextFront = document.createElement("h2")
-    newCardtextFront.className = "captions"
-    newCardtextFront.innerText = "schwimmen"
-    flashcards.appendChild(newCard)
-    flashcards.appendChild(newCardtextFront);
-}
-*/
 
-const card = document.getElementById("card1")
-card.addEventListener("click", flipCard);
-
-function flipCard () {
-    card.classList.toggle("flipCard");
+    const container = document.getElementById("here")
+    const firstCardImage = jsonList[3].download_url
+    const imageTag = document.createElement("img")
+    imageTag.src = firstCardImage
+    imageTag.className = "image"
+    container.appendChild(imageTag) 
 }
