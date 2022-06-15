@@ -34,6 +34,9 @@ function addNewCard(event) {
     event.preventDefault()
     const name = event.target.name.value
     const image = event.target.image.value 
+    const english = event.target.englishTranslation.value
+
+    console.log(english)
 
     const container = document.getElementById("cardContainer")
     const newDiv = document.createElement("div")
@@ -46,8 +49,28 @@ function addNewCard(event) {
     text.className = "frontText"
     userImage.className = "image" 
     newDiv.appendChild(userImage)
-    newDiv.appendChild(text)      
+    newDiv.appendChild(text)
+    
+    const button = document.createElement("button")
+    button.type = "button" 
+    button.innerText = "Click here for English translation" 
+    button.className = "buttons"
+    newDiv.appendChild(button)
+
+    const englishElement = document.createElement("h3")
+    englishElement.innerText = `(${name} = ${english})` 
+    newDiv.appendChild(englishElement)
+
+}
+
+/* const buttons = document.getElementsByClassName("buttons")
+
+buttons.addEventListener("click", showEnglish)
+
+function showEnglish (event) {
+    event.preventDefault()
+    const english = 
 }
 
 
-
+*/
