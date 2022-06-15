@@ -22,7 +22,7 @@ function addFirstFlashCard(jsonList) {
 
 }
 
-
+/*
 function addNewCard (event) {
     event.preventDefault()
     const [name, image] = event.target
@@ -46,3 +46,4 @@ fetch("https://picsum.photos/v2/list", {
 .then (response)
 
 }
+*/
