@@ -13,7 +13,7 @@ function addFirstFlashCard(jsonList) {
     const imageTag = document.createElement("img")
     imageTag.src = firstCardImage
     imageTag.className = "image"
-    container.appendChild(imageTag) 
+    container.appendChild(imageTag); 
 
     const textTag = document.createElement("h2")
     textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich scwhimmen" 
