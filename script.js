@@ -61,6 +61,8 @@ function addNewCard(event) {
     englishElement.innerText = `(${name} = ${english})` 
     newDiv.appendChild(englishElement)
 
+    newDiv.setAttribute("id", name) 
+
 }
 
 /* const buttons = document.getElementsByClassName("buttons")
