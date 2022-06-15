@@ -22,28 +22,21 @@ function addFirstFlashCard(jsonList) {
 
 }
 
-/*
-function addNewCard (event) {
+const form = document.querySelector("form");
+
+form.addEventListener("submit", addNewCard)
+
+function addNewCard(event) {
     event.preventDefault()
-    const [name, image] = event.target
+    const name = event.target.name.value
+    const image = event.target.image.value 
 
-
-
-fetch("https://picsum.photos/v2/list", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-  
-    body: JSON.stringify({
-      "name": name.value,
-      "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
-    })
-})
-
-.then (response => response.json())
-.then (response)
-
+    const container = document.getElementById("cardContainer")
+    const text = document.createElement("h2")
+    const userImage = document.createElement("img")
+    text.innerText = name
+    userImage.src = image 
+    container.appendChild(userImage)
+    container.appendChild(text)      
 }
-*/
+
