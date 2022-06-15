@@ -32,11 +32,15 @@ function addNewCard(event) {
     const image = event.target.image.value 
 
     const container = document.getElementById("cardContainer")
+    const newDiv = document.createElement("div")
+    container.appendChild(newDiv) 
     const text = document.createElement("h2")
     const userImage = document.createElement("img")
     text.innerText = name
     userImage.src = image 
-    container.appendChild(userImage)
-    container.appendChild(text)      
+    text.className = "frontText"
+    userImage.className = "image" 
+    newDiv.appendChild(userImage)
+    newDiv.appendChild(text)      
 }
 
