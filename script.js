@@ -8,18 +8,22 @@ fetch("https://picsum.photos/v2/list")
 
 function addFirstFlashCard(jsonList) {
 
+
     const container = document.getElementById("cardContainer")
+    const newDiv = document.createElement("div")
+    newDiv.className = "cards"
+    container.appendChild(newDiv)
     const firstCardImage = jsonList[3].download_url
     const imageTag = document.createElement("img")
     imageTag.src = firstCardImage
     imageTag.className = "image"
-    container.appendChild(imageTag); 
+    newDiv.appendChild(imageTag); 
 
     const textTag = document.createElement("h2")
     textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich scwhimmen" 
     textTag.className = "frontText"
-    container.appendChild(textTag);
-
+    newDiv.appendChild(textTag);
+    
 }
 
 const form = document.querySelector("form");
@@ -33,6 +37,7 @@ function addNewCard(event) {
 
     const container = document.getElementById("cardContainer")
     const newDiv = document.createElement("div")
+    newDiv.className = "cards"
     container.appendChild(newDiv) 
     const text = document.createElement("h2")
     const userImage = document.createElement("img")
@@ -43,4 +48,6 @@ function addNewCard(event) {
     newDiv.appendChild(userImage)
     newDiv.appendChild(text)      
 }
+
+
 
