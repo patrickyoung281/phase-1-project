@@ -36,7 +36,7 @@ function addNewCard(event) {
     container.appendChild(newDiv) 
     const text = document.createElement("h2")
     const userImage = document.createElement("img")
-    text.innerText = name
+    text.innerText = `Wenn ich Freizeit habe, \n gehe ich ${name}`
     userImage.src = image 
     text.className = "frontText"
     userImage.className = "image" 
