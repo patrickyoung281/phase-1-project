@@ -10,6 +10,7 @@ fetch("https://picsum.photos/v2/list")
         addFirstFlashCard(data)
     });
 
+/*
 function addFirstFlashCard(jsonList) {
     const exampleCard = jsonList[3].download_url
     const flashcards = document.getElementById("flashcards")
@@ -17,7 +18,16 @@ function addFirstFlashCard(jsonList) {
     newCard.className = "flashCardFormat"
     newCard.src = exampleCard
     const newCardtextFront = document.createElement("h2")
+    newCardtextFront.className = "captions"
     newCardtextFront.innerText = "schwimmen"
     flashcards.appendChild(newCard)
     flashcards.appendChild(newCardtextFront);
+}
+*/
+
+const card = document.getElementById("card1")
+card.addEventListener("click", flipCard);
+
+function flipCard () {
+    card.classList.toggle("flipCard");
 }
