@@ -54,7 +54,6 @@ function addNewCard(event) {
     userImage.src = image 
     text.className = "frontText"
     userImage.className = "image" 
-    //name.style.color = "blue" 
     newDiv.appendChild(userImage)
     newDiv.appendChild(text)
     
@@ -65,6 +64,7 @@ function addNewCard(event) {
     newDiv.appendChild(button)
 
     const englishElement = document.createElement("h3")
+    englishElement.className = "englishTranslation"
     englishElement.innerText = `(${name} = ${english})` 
     newDiv.appendChild(englishElement)
 
@@ -72,7 +72,4 @@ function addNewCard(event) {
 
 }
 
-const buttons = document.querySelector("buttons")
-
-buttons.addEventListener("click", function () {alert("Hello!");});
 

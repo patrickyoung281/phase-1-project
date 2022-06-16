@@ -32,3 +32,8 @@
 .frontText {
     float: left;
 }
+
+.englishTranslation {
+    clear: left;
+    top: -100px;
+}
