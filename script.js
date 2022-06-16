@@ -23,6 +23,12 @@ function addFirstFlashCard(jsonList) {
     textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich scwhimmen" 
     textTag.className = "frontText"
     newDiv.appendChild(textTag);
+
+    const button = document.createElement("button")
+    button.type = "button" 
+    button.innerText = "Click here for English translation" 
+    button.className = "buttons"
+    newDiv.appendChild(button)
     
 }
 
@@ -48,13 +54,14 @@ function addNewCard(event) {
     userImage.src = image 
     text.className = "frontText"
     userImage.className = "image" 
+    //name.style.color = "blue" 
     newDiv.appendChild(userImage)
     newDiv.appendChild(text)
     
     const button = document.createElement("button")
     button.type = "button" 
     button.innerText = "Click here for English translation" 
-    button.className = "buttons"
+    button.className = "newButtons"
     newDiv.appendChild(button)
 
     const englishElement = document.createElement("h3")
@@ -65,14 +72,7 @@ function addNewCard(event) {
 
 }
 
-/* const buttons = document.getElementsByClassName("buttons")
+const buttons = document.querySelector("buttons")
 
-buttons.addEventListener("click", showEnglish)
+buttons.addEventListener("click", function () {alert("Hello!");});
 
-function showEnglish (event) {
-    event.preventDefault()
-    const english = 
-}
-
-
-*/
