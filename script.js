@@ -62,6 +62,8 @@ function addNewCard(event) {
     button.innerText = "Click here for English translation" 
     button.className = "newButtons"
     newDiv.appendChild(button)
+    button.addEventListener("click", alertMe)
+
 
     const englishElement = document.createElement("h3")
     englishElement.className = "englishTranslation"
@@ -70,15 +72,17 @@ function addNewCard(event) {
 
     newDiv.setAttribute("id", name) 
 
+    
+    const buttons = document.querySelector("button")
+
+    console.log("buttons", buttons)
+
+    buttons.addEventListener("click", alertMe);
+
+    function alertMe() {
+        alert("Alert!");
+    }
+
 }
 
 
-const buttons = document.querySelector("button")
-
-console.log("buttons", buttons)
-
-buttons.addEventListener("click", alertMe);
-
-function alertMe() {
-    alert("Alert!");
-}
