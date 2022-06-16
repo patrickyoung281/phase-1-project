@@ -17,17 +17,29 @@ function addFirstFlashCard(jsonList) {
     const imageTag = document.createElement("img")
     imageTag.src = firstCardImage
     imageTag.className = "image"
+    imageTag.style.padding = "5px";
+    imageTag.style.borderStyle = "solid";
+    imageTag.style.borderColor = "red";
+    imageTag.style.borderWidth = "5px";
     newDiv.appendChild(imageTag); 
 
+
+
     const textTag = document.createElement("h2")
-    textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich scwhimmen" 
+    textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich gerne scwhimmen" 
     textTag.className = "frontText"
+    textTag.style.padding = "40px";
+    textTag.style.lineHeight = "40px";
     newDiv.appendChild(textTag);
 
     const button = document.createElement("button")
     button.type = "button" 
     button.innerText = "Click here for English translation" 
     button.id = "newButtons1"
+    button.style.color = "blue";
+    button.style.position = "relative";
+    button.style.bottom = "115px";
+    button.style.left = "30px";
     newDiv.appendChild(button)
     
 }
@@ -50,8 +62,8 @@ function addNewCard(event) {
     container.appendChild(newDiv) 
     const text = document.createElement("h2")
     const userImage = document.createElement("img")
-    text.innerText = `Wenn ich Freizeit habe, \n gehe ich ${name}`
-    text.style.padding = "20px";
+    text.innerText = `Wenn ich Freizeit habe, \n gehe ich gerne ${name}`
+    text.style.padding = "40px";
     text.style.lineHeight = "40px";
     
     
@@ -92,7 +104,7 @@ function addNewCard(event) {
     buttons.addEventListener("click", showEnglishTranslation);
 
     function showEnglishTranslation() {
-        alert(`(${name} = ${english})`);
+        alert(`English translation: "When I have free time, I like ${english}."`);
     }
 
 }
