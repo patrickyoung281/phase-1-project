@@ -27,7 +27,7 @@ function addFirstFlashCard(jsonList) {
     const button = document.createElement("button")
     button.type = "button" 
     button.innerText = "Click here for English translation" 
-    button.className = "buttons"
+    button.id = "newButtons1"
     newDiv.appendChild(button)
     
 }
@@ -73,3 +73,12 @@ function addNewCard(event) {
 }
 
 
+const buttons = document.querySelector("button")
+
+console.log("buttons", buttons)
+
+buttons.addEventListener("click", alertMe);
+
+function alertMe() {
+    alert("Alert!");
+}
