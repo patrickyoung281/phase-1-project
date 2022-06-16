@@ -34,6 +34,9 @@
 }
 
 .englishTranslation {
-    clear: left;
-    top: -100px;
+    visibility: hidden;
+}
+
+.newButtons {
+    bottom: -200px;
 }

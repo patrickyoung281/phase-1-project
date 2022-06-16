@@ -51,9 +51,17 @@ function addNewCard(event) {
     const text = document.createElement("h2")
     const userImage = document.createElement("img")
     text.innerText = `Wenn ich Freizeit habe, \n gehe ich ${name}`
+    text.style.padding = "20px";
+    text.style.lineHeight = "40px";
+    
+    
     userImage.src = image 
     text.className = "frontText"
     userImage.className = "image" 
+    userImage.style.padding = "5px";
+    userImage.style.borderStyle = "solid";
+    userImage.style.borderColor = "red";
+    userImage.style.borderWidth = "5px";
     newDiv.appendChild(userImage)
     newDiv.appendChild(text)
     
@@ -62,7 +70,11 @@ function addNewCard(event) {
     button.innerText = "Click here for English translation" 
     button.className = "newButtons"
     newDiv.appendChild(button)
-    button.addEventListener("click", alertMe)
+    button.style.color = "blue";
+    button.style.position = "relative";
+    button.style.bottom = "115px";
+    button.style.left = "30px";
+    button.addEventListener("click", showEnglishTranslation)
 
 
     const englishElement = document.createElement("h3")
@@ -77,10 +89,10 @@ function addNewCard(event) {
 
     console.log("buttons", buttons)
 
-    buttons.addEventListener("click", alertMe);
+    buttons.addEventListener("click", showEnglishTranslation);
 
-    function alertMe() {
-        alert("Alert!");
+    function showEnglishTranslation() {
+        alert(`(${name} = ${english})`);
     }
 
 }
