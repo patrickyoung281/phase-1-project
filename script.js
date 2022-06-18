@@ -10,9 +10,9 @@ function addFirstFlashCard(jsonList) {
 
     const firstTwoCards = jsonList.slice(2,4)
     firstTwoCards[0]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne wandern." 
-    firstTwoCards[0]["English"] = "to hike."
+    firstTwoCards[0]["English"] = "to hike"
     firstTwoCards[1]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne schwimmen." 
-    firstTwoCards[1]["English"] = "to swim."
+    firstTwoCards[1]["English"] = "to swim"
 
     firstTwoCards.forEach(function (element, i) {
 
