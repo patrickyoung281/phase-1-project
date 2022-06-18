@@ -31,6 +31,7 @@ function addFirstFlashCard(jsonList) {
     imageTag.style.borderWidth = "5px";
     newDiv.appendChild(imageTag); 
 
+
     const textTag = document.createElement("h2")
     textTag.id = `Card${i}`
 
@@ -40,10 +41,13 @@ function addFirstFlashCard(jsonList) {
     textTag.style.lineHeight = "40px";
     newDiv.appendChild(textTag);
 
+    
+    
+    
     const button = document.createElement("button")
     button.type = "button" 
     button.innerText = "Click here for English translation" 
-    button.id = "newButtons1"
+    button.className = "firstButtons"
     button.style.color = "blue";
     button.style.position = "relative";
     button.style.bottom = "115px";
@@ -52,10 +56,28 @@ function addFirstFlashCard(jsonList) {
     const english = element.English
     button.addEventListener("click", showEnglishTranslation);
 
+    const gotItButton = document.createElement("button")
+    gotItButton.className = "gotItButtons0"
+    newDiv.appendChild(gotItButton)
+    gotItButton.innerText = "Click here when you feel like you have memorized the word!" 
+    gotItButton.style.backgroundColor = "yellow";
+
+    gotItButton.addEventListener("click", changeColor);
+
+   function changeColor () {
+        gotItButton.style.backgroundColor = "MediumSpringGreen";
+        gotItButton.fontSize = "24px"; 
+        gotItButton.innerText = `Gratuliere! You know that "${name}" means "${english}."\nKeep going until you have memorized all of the words!`;
+
+    } 
+
     function showEnglishTranslation() {
         alert(`English translation: "When I have free time, I like ${english}."`);
     }
     })
+
+
+    
 }
 
 const form = document.querySelector("form");
@@ -126,7 +148,7 @@ function addNewCard(event) {
     gotItButton.style.backgroundColor = "yellow";
     gotItButton.style.position = "relative";
     gotItButton.style.left = "340px";
-    gotItButton.style.bottom = "40px";
+    gotItButton.style.bottom = "120px";
     gotItButton.style.fontSize = "16px";
 
     gotItButton.addEventListener("click", changeColor);

@@ -27,6 +27,7 @@
     height: 25%;
     width: 25%;
     clear: left;
+    margin-bottom: 100px; 
 }
 
 .frontText {
@@ -55,6 +56,8 @@
     color: blue; 
 }
 
-.gotItButtons {
+.gotItButtons0 {
+    position: relative;
     left: -600px;
+    bottom: 60px;
 }
