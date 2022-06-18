@@ -107,6 +107,22 @@ function addNewCard(event) {
         alert(`English translation: "When I have free time, I like ${english}."`);
     }
 
+    const gotItButton = document.createElement("button")
+    gotItButton.className = "gotItButtons"
+    newDiv.appendChild(gotItButton)
+    gotItButton.innerText = "Click here when you feel like you have memorized the word!" 
+    gotItButton.style.backgroundColor = "yellow";
+    gotItButton.style.position = "relative";
+    gotItButton.style.left = "340px";
+    gotItButton.style.bottom = "40px";
+    gotItButton.style.fontSize = "16px";
+
+    gotItButton.addEventListener("click", changeColor);
+
+   function changeColor () {
+        gotItButton.style.backgroundColor = "MediumSpringGreen";
+        gotItButton.fontSize = "24px"; 
+        gotItButton.innerText = `Gratuliere! You know that "${name}" means "${english}."\nKeep going until you have memorized all of the words!`;
+
+    } 
 }
-
-
