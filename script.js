@@ -11,8 +11,10 @@ function addFirstFlashCard(jsonList) {
     const firstTwoCards = jsonList.slice(2,4)
     firstTwoCards[0]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne wandern." 
     firstTwoCards[0]["English"] = "to hike"
+    firstTwoCards[0]["GermanVerb"] = "wandern"
     firstTwoCards[1]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne schwimmen." 
     firstTwoCards[1]["English"] = "to swim"
+    firstTwoCards[1]["GermanVerb"] = "schwimmen"
 
     firstTwoCards.forEach(function (element, i) {
 
@@ -67,7 +69,7 @@ function addFirstFlashCard(jsonList) {
    function changeColor () {
         gotItButton.style.backgroundColor = "MediumSpringGreen";
         gotItButton.fontSize = "24px"; 
-        gotItButton.innerText = `Gratuliere! You know that "${name}" means "${english}."\nKeep going until you have memorized all of the words!`;
+        gotItButton.innerText = `Gratuliere! You know that "${element.GermanVerb}" means "${english}."\nKeep going until you have memorized all of the words!`;
 
     } 
 
