@@ -1,6 +1,5 @@
 fetch("https://picsum.photos/v2/list")
     .then((resp) => resp.json())
-    //.then((json) => console.log(json))
     .then(function (data) {
         addFirstFlashCard(data)
     });
@@ -9,11 +8,20 @@ fetch("https://picsum.photos/v2/list")
 function addFirstFlashCard(jsonList) {
 
 
+    const firstTwoCards = jsonList.slice(2,4)
+    firstTwoCards[0]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne wandern." 
+    firstTwoCards[0]["English"] = "to hike."
+    firstTwoCards[1]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne schwimmen." 
+    firstTwoCards[1]["English"] = "to swim."
+
+    firstTwoCards.forEach(function (element, i) {
+
     const container = document.getElementById("cardContainer")
     const newDiv = document.createElement("div")
     newDiv.className = "cards"
     container.appendChild(newDiv)
-    const firstCardImage = jsonList[3].download_url
+    const firstCardImage = element.download_url
+
     const imageTag = document.createElement("img")
     imageTag.src = firstCardImage
     imageTag.className = "image"
@@ -23,10 +31,10 @@ function addFirstFlashCard(jsonList) {
     imageTag.style.borderWidth = "5px";
     newDiv.appendChild(imageTag); 
 
-
-
     const textTag = document.createElement("h2")
-    textTag.innerText = "Wenn ich Freizeit habe, \n gehe ich gerne scwhimmen" 
+    textTag.id = `Card${i}`
+
+    textTag.innerText = element.text 
     textTag.className = "frontText"
     textTag.style.padding = "40px";
     textTag.style.lineHeight = "40px";
@@ -41,7 +49,13 @@ function addFirstFlashCard(jsonList) {
     button.style.bottom = "115px";
     button.style.left = "30px";
     newDiv.appendChild(button)
-    
+    const english = element.English
+    button.addEventListener("click", showEnglishTranslation);
+
+    function showEnglishTranslation() {
+        alert(`English translation: "When I have free time, I like ${english}."`);
+    }
+    })
 }
 
 const form = document.querySelector("form");
@@ -53,8 +67,6 @@ function addNewCard(event) {
     const name = event.target.name.value
     const image = event.target.image.value 
     const english = event.target.englishTranslation.value
-
-    console.log(english)
 
     const container = document.getElementById("cardContainer")
     const newDiv = document.createElement("div")
@@ -125,4 +137,5 @@ function addNewCard(event) {
         gotItButton.innerText = `Gratuliere! You know that "${name}" means "${english}."\nKeep going until you have memorized all of the words!`;
 
     } 
+
 }
