@@ -1,6 +1,4 @@
-//fetch data from public API
-
-fetch("https://picsum.photos/v2/list")
+fetch("https://picsum.photos/v2/list") //fetch data from public API
     .then((resp) => resp.json())
     .then(function (data) {
         addFirstFlashCard(data)
@@ -23,6 +21,17 @@ function addFirstFlashCard(jsonList) {
     newDiv.className = "cards"
     container.appendChild(newDiv)
     
+    const textTag = document.createElement("h2") // create text element for each image 
+    textTag.id = `Card${i}`
+    textTag.innerText = element.text // text accessed from the key:value pair created on lines 12 and 15 
+    textTag.className = "frontText"
+    textTag.style.padding = "40px";
+    textTag.style.lineHeight = "40px";
+    textTag.style.position = "relative"; 
+    textTag.style.float = "left"; 
+    textTag.style.display = "block";
+    newDiv.appendChild(textTag);
+    
     const imageTag = document.createElement("img") // create img element for the image from the API
     imageTag.src = element.download_url // the image URL from the API becomes the src for the image tag
     imageTag.className = "image"
@@ -32,14 +41,7 @@ function addFirstFlashCard(jsonList) {
     imageTag.style.borderWidth = "5px";
     newDiv.appendChild(imageTag); 
 
-    const textTag = document.createElement("h2") // create text element for each image 
-    textTag.id = `Card${i}`
-    textTag.innerText = element.text // text accessed from the key:value pair created on lines 12 and 15 
-    textTag.className = "frontText"
-    textTag.style.padding = "40px";
-    textTag.style.lineHeight = "40px";
-    newDiv.appendChild(textTag);
-
+    
     const button = document.createElement("button") //creates the English translation button 
     button.type = "button" 
     button.innerText = "Click here for English translation" 
@@ -60,8 +62,11 @@ function addFirstFlashCard(jsonList) {
     const gotItButton = document.createElement("button") //creates got it button
     gotItButton.className = "gotItButtons0"
     newDiv.appendChild(gotItButton)
+    gotItButton.fontSize = "24px";
     gotItButton.innerText = "Click here when you feel like you have memorized the word!" 
     gotItButton.style.backgroundColor = "yellow";
+    gotItButton.style.clear = "both";
+    
 
     gotItButton.addEventListener("click", changeColor);
 
