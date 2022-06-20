@@ -71,6 +71,9 @@
     font-size: 16px;
     border-radius: 20px;
     padding: 10px;
+    border-style: groove;
+    border-color: brown;
+    border-width: 4px; 
 }
 
 #cardImage0 {
