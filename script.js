@@ -127,7 +127,7 @@ function addNewCard(event) {
     }
 
     const gotItButton = document.createElement("button") //creates got it button for user-created cards 
-    gotItButton.className = "gotItButtons"
+    gotItButton.className = "gotItButtons0"
     newDiv.appendChild(gotItButton)
     gotItButton.innerText = "Click here when you feel like you have memorized the word!" 
     gotItButton.style.backgroundColor = "yellow";
