@@ -5,7 +5,17 @@
     text-align: center; 
     background-color: brown; 
     color: white; 
-    font-size: 30px; 
+    font-size: 30px;
+}
+
+#flag1 {
+    position: relative;
+    float: left;
+}
+
+#flag2 {
+    position: relative;
+    float: right;
 }
 
 .input-text {
