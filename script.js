@@ -22,7 +22,7 @@ function addFirstFlashCard(jsonList) {
     container.appendChild(newDiv)
     
     const textTag = document.createElement("h2") // create text element for each image 
-    textTag.id = `Card${i}`
+    textTag.id = `Card${i}`;
     textTag.innerText = element.text // text accessed from the key:value pair created on lines 12 and 15 
     textTag.className = "frontText"
     textTag.style.padding = "40px";
@@ -35,6 +35,7 @@ function addFirstFlashCard(jsonList) {
     const imageTag = document.createElement("img") // create img element for the image from the API
     imageTag.src = element.download_url // the image URL from the API becomes the src for the image tag
     imageTag.className = "image"
+    imageTag.id = `CardImage${i}`;
     imageTag.style.padding = "5px";
     imageTag.style.borderStyle = "solid";
     imageTag.style.borderColor = "red";
@@ -48,7 +49,7 @@ function addFirstFlashCard(jsonList) {
     button.className = "firstButtons"
     button.style.color = "blue";
     button.style.position = "relative";
-    button.style.bottom = "115px";
+    button.style.bottom = "250px";
     button.style.left = "30px";
     newDiv.appendChild(button)
     button.addEventListener("click", showEnglishTranslation);
@@ -117,7 +118,7 @@ function addNewCard(event) {
     newDiv.appendChild(button)
     button.style.color = "blue";
     button.style.position = "relative";
-    button.style.bottom = "115px";
+    button.style.bottom = "250px";
     button.style.left = "30px";
     button.addEventListener("click", showEnglishTranslation)
 
