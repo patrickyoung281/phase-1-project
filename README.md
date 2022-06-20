@@ -1,4 +1,4 @@
-<h1>German FLashcard Generator</h1>
+<h1>German Flashcard Generator</h1>
 
 <h2>What is this app?</h2>
 
