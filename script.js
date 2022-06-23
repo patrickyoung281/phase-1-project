@@ -81,6 +81,21 @@ function addFirstFlashCard(jsonList) {
 
 const form = document.querySelector("form"); //user created flashcards form 
 
+const formButton = document.getElementById("submitButton") //Event listeners for interactivity on submit button 
+
+formButton.addEventListener("mouseover", colorSwitch)
+function colorSwitch (e) {
+    e.target.style.backgroundColor = "orange";
+    e.target.style.color = "blue";
+    console.log("e", e.target);
+}
+
+formButton.addEventListener("mouseout", originalColor)
+function originalColor (e) {
+    e.target.style.backgroundColor = "blue";
+    e.target.style.color = "orange";
+}
+
 form.addEventListener("submit", addNewCard) //fired when a user submits a new card 
 
 function addNewCard(event) {

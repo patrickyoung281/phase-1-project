@@ -59,11 +59,6 @@
     border-radius: 20px;
 }
 
-.submit:hover {
-    background-color: orange;
-    color: blue; 
-}
-
 .gotItButtons0 {
     position: relative;
     left: -600px;
