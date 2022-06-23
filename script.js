@@ -87,7 +87,6 @@ formButton.addEventListener("mouseover", colorSwitch)
 function colorSwitch (e) {
     e.target.style.backgroundColor = "orange";
     e.target.style.color = "blue";
-    console.log("e", e.target);
 }
 
 formButton.addEventListener("mouseout", originalColor)
