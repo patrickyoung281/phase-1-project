@@ -1,20 +1,20 @@
-fetch("https://picsum.photos/v2/list") //fetch data from public API
+fetch("https://picsum.photos/v2/list") //fetch data from public API // add DOM Content Loaded // promise = pending / resolved / error 
     .then((resp) => resp.json())
-    .then(function (data) {
-        addFirstFlashCard(data)
+    .then((data) => {
+        addTwoExampleCards(data)
     });
 
-function addFirstFlashCard(jsonList) {
+function addTwoExampleCards(jsonList) {
 
-    const firstTwoCards = jsonList.slice(2,4)   //create new array of objects from original API data
-    firstTwoCards[0]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne wandern."     //add new key: value pairs to each of the two objects in sliced array
-    firstTwoCards[0]["English"] = "to hike"
-    firstTwoCards[0]["GermanVerb"] = "wandern"
-    firstTwoCards[1]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne schwimmen." 
-    firstTwoCards[1]["English"] = "to swim"
-    firstTwoCards[1]["GermanVerb"] = "schwimmen"
+    const twoExampleCards = jsonList.slice(2,4)   //create new array of objects from original API data
+    twoExampleCards[0]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne wandern."     //add new key: value pairs to each of the two objects in sliced array
+    twoExampleCards[0]["English"] = "to hike"
+    twoExampleCards[0]["GermanVerb"] = "wandern"
+    twoExampleCards[1]["text"] = "Wenn ich Freizeit habe, \n gehe ich gerne schwimmen." 
+    twoExampleCards[1]["English"] = "to swim"
+    twoExampleCards[1]["GermanVerb"] = "schwimmen"
 
-    firstTwoCards.forEach(function (element, i) {   //iterate over my sliced array using forEach
+    twoExampleCards.forEach(function (element, i) {   //iterate over my sliced array using forEach
 
     const container = document.getElementById("cardContainer") //create new DOM elements for each array element. This is where API data will be displayed for the user
     const newDiv = document.createElement("div")
@@ -97,7 +97,7 @@ function originalColor (e) {
 
 form.addEventListener("submit", addNewCard) //fired when a user submits a new card 
 
-function addNewCard(event) {
+function addUserCreatedCards(event) {
     event.preventDefault()
     const name = event.target.name.value // gives access to three form input boxes/values 
     const image = event.target.image.value 
