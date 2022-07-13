@@ -95,7 +95,7 @@ function originalColor (e) {
     e.target.style.color = "orange";
 }
 
-form.addEventListener("submit", addNewCard) //fired when a user submits a new card 
+form.addEventListener("submit", addUserCreatedCards) //fired when a user submits a new card 
 
 function addUserCreatedCards(event) {
     event.preventDefault()
@@ -160,3 +160,4 @@ function addUserCreatedCards(event) {
     } 
 
 }
+
